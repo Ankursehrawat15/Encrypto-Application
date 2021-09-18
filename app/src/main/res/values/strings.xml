@@ -5,8 +5,10 @@
     <string name="choose_the_algorithm">Choose the Algorithm</string>
     <string name="sha_256">SHA-256</string>
     <string name="text_here">Text Here ..</string>
-    <string name="generate">Generate</string>
+    <string name="generate">Encrypt</string>
     <string name="clear">clear</string>
+    <string name="copy">Copy</string>
+    <string name="logo">logo</string>
 
     <string-array name="hash_algorithms">
 

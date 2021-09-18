@@ -26,5 +26,9 @@
         <action
             android:id="@+id/action_sucessFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="hash"
+            android:defaultValue="Empty"
+            app:argType="string" />
     </fragment>
 </navigation>
