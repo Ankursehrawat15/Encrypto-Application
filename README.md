@@ -13,17 +13,5 @@ This app uses asymmetric and symmetric algorithms including Customized cypher to
  5. AES
 
 
-<h3>ScreenShots</h3>
-<div class="row">
-          <img src="ScreenShots\screen_1.png" width = "200" title = "ss1">
-          <img src ="ScreenShots\screen_2.png" width = "200" title = "ss2">
-          <img src ="ScreenShots\screen_6.png" width = "200" title = "ss3">
-            
-</div>
-
-<div class="row">
-           <img src="ScreenShots\screen_3.png" width = "200" title = "ss4">
-          <img src ="ScreenShots\screen_4.png" width = "200" title = "ss5">
-          <img src ="ScreenShots\screen_5.png" width = "200" title = "ss6">
-           
-</div>
+## ScreenShots
+![CodeWatch Screenshots](screenshots/combine_images.jpg)
