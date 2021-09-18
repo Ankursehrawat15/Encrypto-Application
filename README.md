@@ -14,4 +14,4 @@ This app uses asymmetric and symmetric algorithms including Customized cypher to
 
 
 ## ScreenShots
-![CodeWatch Screenshots](screenshots/combine_images.jpg)
+![Encrypto Screenshots](ScreenShots/combine_images.jpg)
