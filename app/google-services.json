@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "904945589837",
+    "project_id": "encrypto-app-78cc9",
+    "storage_bucket": "encrypto-app-78cc9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904945589837:android:4bd548e3fcbfff45c20604",
+        "android_client_info": {
+          "package_name": "com.example.android.encrytpo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904945589837-se5ne92o9r2slm3kmjarbe0fk127deup.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBjVlagiZaJUmkLk_zPPn095FqLD3yXHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904945589837-se5ne92o9r2slm3kmjarbe0fk127deup.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
