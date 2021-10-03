@@ -9,20 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Encrytpo">
-        <activity android:name=".SignInActivity"
-            android:theme="@style/SplashTheme">
-
-        </activity>
+        <activity android:name=".GeneratePasswordActivity"></activity>
+        <activity
+            android:name=".SignInActivity"
+            android:theme="@style/SplashTheme" />
         <activity
             android:name=".WelcomeSplash"
-            android:theme="@style/SplashTheme">
-
-        </activity>
+            android:theme="@style/SplashTheme" />
         <activity
             android:name=".SignUpActivity"
-            android:theme="@style/SplashTheme">
-
-        </activity>
+            android:theme="@style/SplashTheme" />
         <activity
             android:name=".SplashScreen"
             android:screenOrientation="portrait"
