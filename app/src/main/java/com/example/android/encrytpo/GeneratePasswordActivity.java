@@ -32,7 +32,6 @@ public class GeneratePasswordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate_password2);
-
         password_genrated = findViewById(R.id.genrated_password);
         length = findViewById(R.id.length_Seekbar);
         length_show = findViewById(R.id.length_heading);
