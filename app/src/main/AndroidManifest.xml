@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Encrytpo">
-        <activity android:name=".GeneratePasswordActivity"></activity>
+        <activity android:name=".GetPassword"></activity>
+        <activity android:name=".AddPassword" />
+        <activity android:name=".FingerPrintAuthentication" />
+        <activity android:name=".GeneratePasswordActivity" />
         <activity
             android:name=".SignInActivity"
             android:theme="@style/SplashTheme" />

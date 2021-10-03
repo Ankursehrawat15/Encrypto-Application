@@ -7,21 +7,28 @@ import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var button : Button
-    private lateinit var button2 : Button
+    private lateinit var hash : Button
+    private lateinit var generatePassword : Button
+    private lateinit var vault : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        button2 = findViewById(R.id.button2)
-        button = findViewById(R.id.button)
-        button.setOnClickListener {
+       generatePassword = findViewById(R.id.button2)
+        vault = findViewById(R.id.button3)
+        hash = findViewById(R.id.button)
+        hash.setOnClickListener {
             val intent : Intent = Intent(this , DashBoardActivity::class.java)
             startActivity(intent)
 
         }
 
-        button2.setOnClickListener {
+        generatePassword.setOnClickListener {
             val intent : Intent = Intent(this , GeneratePasswordActivity::class.java)
+            startActivity(intent)
+        }
+
+        vault.setOnClickListener {
+            val intent : Intent = Intent(this , FingerPrintAuthentication::class.java)
             startActivity(intent)
         }
 
