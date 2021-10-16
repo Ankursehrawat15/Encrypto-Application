@@ -4,13 +4,21 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_app"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.Encrytpo">
-        <activity android:name=".GetPassword"></activity>
-        <activity android:name=".AddPassword" />
+        <activity
+            android:name=".AboutUs"
+            android:exported="true" />
+        <!-- <activity android:name=".NotVerified" -->
+        <!-- android:theme="@style/SplashTheme"> -->
+        <!-- </activity> -->
+        <activity android:name=".GetPassword" />
+        <activity
+            android:name=".AddPassword"
+            android:windowSoftInputMode="adjustPan"></activity>
         <activity android:name=".FingerPrintAuthentication" />
         <activity android:name=".GeneratePasswordActivity" />
         <activity

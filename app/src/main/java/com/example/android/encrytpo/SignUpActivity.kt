@@ -1,5 +1,6 @@
 package com.example.android.encrytpo
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,14 +19,15 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-
+        val users_name : EditText = findViewById(R.id.nameET)
         val switch_to_SignIn : TextView = findViewById(R.id.already_have_Account)
         val email : EditText = findViewById(R.id.mailET)
         val password: EditText = findViewById(R.id.passwordET)
         val confirmPassword: EditText = findViewById(R.id.confirmpasswordET)
         val signUpButton : Button = findViewById(R.id.signup_btn)
 
-
+        val sharedPref = getSharedPreferences("encrypto" , Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
         val auth = FirebaseAuth.getInstance()
 
         switch_to_SignIn.setOnClickListener {
@@ -35,13 +37,14 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         signUpButton.setOnClickListener {
+            val name = users_name.text.toString()
            val emailText = email.text.toString()
            val passwordText = password.text.toString()
            val confirmPasswordText = confirmPassword.text.toString()
 
 
             // validation
-            if(TextUtils.isEmpty(emailText) || TextUtils.isEmpty(passwordText) || TextUtils.isEmpty(confirmPasswordText)){
+            if( TextUtils.isEmpty(name)   || TextUtils.isEmpty(emailText) || TextUtils.isEmpty(passwordText) || TextUtils.isEmpty(confirmPasswordText)){
                  Toast.makeText(this , "Fields cannot be empty", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -59,9 +62,24 @@ class SignUpActivity : AppCompatActivity() {
             auth.createUserWithEmailAndPassword(emailText,passwordText)
                 .addOnCompleteListener { task ->
                     if(task.isSuccessful){
-                        val intent = Intent(this , WelcomeSplash::class.java)
-                        startActivity(intent)
-                        finish()
+                        editor.apply {
+                            putString("name" , name)
+                            apply()
+                        }
+
+                        auth.currentUser?.sendEmailVerification()?.addOnCompleteListener { task ->
+                            if(task.isSuccessful){
+                                Toast.makeText(this , "Verification Link is Sent to Email", Toast.LENGTH_LONG).show()
+                                val intent = Intent(this , SignInActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            }else{
+
+                                Toast.makeText(this , "Not found any Email Address" + task.exception?.message, Toast.LENGTH_LONG).show()
+                            }
+
+                        }
+
                     }else{
                         Toast.makeText(this , "Something went wrong!" + task.exception?.message, Toast.LENGTH_LONG).show()
                     }

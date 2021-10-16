@@ -14,6 +14,7 @@
     <string name="email">Email</string>
     <string name="sign_up_and_get_started">Sign up and get started</string>
     <string name="create_your_account">Create Your Account</string>
+    <string name="home">Home</string>
 
     <string-array name="hash_algorithms">
 

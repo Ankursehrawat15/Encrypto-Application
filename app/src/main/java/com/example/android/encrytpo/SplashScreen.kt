@@ -18,12 +18,19 @@ class SplashScreen : AppCompatActivity() {
         handler = Handler()
         handler.postDelayed({
             // for checking account has loged in or not
-            if(auth.currentUser != null){
-                val intent = Intent(this , MainActivity::class.java)
-                startActivity(intent)
-                finish()
+            if(auth.currentUser != null ){
+
+                if(auth.currentUser!!.isEmailVerified){
+                    val intent = Intent(this , MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }else{
+                    val intent = Intent(this , SignInActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
             }else{
-                val intent = Intent(this , SignInActivity::class.java)
+                val intent = Intent(this , SignUpActivity::class.java)
                 startActivity(intent)
                 finish()
             }

@@ -28,6 +28,7 @@ public class FingerPrintAuthentication extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finger_print_authentication);
+        this.getSupportActionBar().setTitle("Your Wallet");
         mainLayout = findViewById(R.id.mainLayout);
         goToVault = findViewById(R.id.addpassword);
         getPass = findViewById(R.id.getPass);

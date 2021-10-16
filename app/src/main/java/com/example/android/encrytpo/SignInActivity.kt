@@ -36,9 +36,16 @@ class SignInActivity : AppCompatActivity() {
             auth.signInWithEmailAndPassword(emailText , passwordText)
                 .addOnCompleteListener { task ->
                     if(task.isSuccessful){
-                        val intent = Intent(this , WelcomeSplash::class.java)
-                        startActivity(intent)
-                        finish()
+
+                        if(auth.currentUser?.isEmailVerified == true){
+                            val intent = Intent(this , WelcomeSplash::class.java)
+                            startActivity(intent)
+                            finish()
+                        }else{
+                            Toast.makeText(this ,"Email not verified yet. Check your mail", Toast.LENGTH_LONG).show()
+                        }
+
+
                     }else{
                         Toast.makeText(this ,task.exception?.message, Toast.LENGTH_LONG).show()
                     }

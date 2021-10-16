@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -27,17 +28,20 @@ public class GeneratePasswordActivity extends AppCompatActivity {
     TextView length_show;
     Button copy_Password;
 
+
   private int pos = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate_password2);
+        this.getSupportActionBar().hide();
         password_genrated = findViewById(R.id.genrated_password);
         length = findViewById(R.id.length_Seekbar);
         length_show = findViewById(R.id.length_heading);
         btn = findViewById(R.id.generate_password_button);
         copy_Password = findViewById(R.id.copy);
         mainLayout = findViewById(R.id.password_layout);
+
 
            // for seekBar ie defining length of the password
            length.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

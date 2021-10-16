@@ -1,8 +1,13 @@
 package com.example.android.encrytpo
 
 import android.app.LauncherActivity
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -25,17 +30,28 @@ class GetPassword : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.adapter = PasswordAdapter(list)
         recyclerView.layoutManager = LinearLayoutManager(this)
+        val loadingImage : ImageView = findViewById(R.id.loadingImage)
+        val loadingTV : TextView = findViewById(R.id.loadingTV)
 
         val firebaseDatabase = FirebaseDatabase.getInstance()
         val firebaseAuth = FirebaseAuth.getInstance()
+        val obj : Aes = Aes()
+           var decrypt_value = ""
+
+
 
         firebaseDatabase.reference.child(firebaseAuth.currentUser?.uid.toString()).addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                list.clear()
-                for(child in snapshot.children){
-                       list.add(ListPasswords(child.key.toString() , child.value.toString()))
-                }
 
+
+                for(child in snapshot.children){
+                       decrypt_value = obj.decrypt(child.value.toString() , child.key.toString()+firebaseAuth.currentUser?.uid.toString())
+                       list.add(ListPasswords(child.key.toString() , decrypt_value))
+                }
+                loadingImage.visibility = View.GONE
+                loadingTV.visibility = View.GONE
+                recyclerView.visibility = View.VISIBLE
                 (recyclerView.adapter as  PasswordAdapter ).notifyDataSetChanged()
             }
 

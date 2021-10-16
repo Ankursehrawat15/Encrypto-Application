@@ -14,6 +14,11 @@
     <color name="blue">#167AF6</color>
     <color name="grey">#727D9E</color>
     <color name="dark_blue">#14275E</color>
-
+    <color name="lightGray">#E3E3E3</color>
+    <color name="darkGray">#959595</color>
+    <color name="weak">#FF4646</color>
+    <color name="medium">#ff8f00</color>
+    <color name="strong">#FCCA3F</color>
+    <color name="bulletproof">#00c853</color>
 
 </resources>
