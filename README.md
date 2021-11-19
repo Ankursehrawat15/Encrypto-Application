@@ -14,4 +14,4 @@ This app uses asymmetric and symmetric algorithms including Customized cypher to
 
 
 ## ScreenShots
-![Encrypto Screenshots](ScreenShots/combine_images.jpg)
+![Encrypto Screenshots](ScreenShots/30b237ef4c0be62a912a0bcc5bf6d1e5.jpeg)
